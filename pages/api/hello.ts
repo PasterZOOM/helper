@@ -2,12 +2,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
-  name: string
+    name: string
 }
+const statusCode = 200
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  res.status(200).json({ name: 'John Doe' })
+export default function handler(req: NextApiRequest, res: NextApiResponse<Data>): void {
+    res.status(statusCode).json({ name: 'John Doe' })
 }
